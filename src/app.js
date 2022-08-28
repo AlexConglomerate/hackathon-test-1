@@ -7,6 +7,7 @@ import {BackgroundModule} from "./modules/background.module";
 import {RandomSoundModule} from "./modules/randomSound";
 import {ShapeModule} from "./modules/shape.module";
 
+import { writeCoordinate } from "./utils";
 import "./styles.css";
 
 let menu = new ContextMenu("#menu");
@@ -22,6 +23,7 @@ let func_telegram = new Teleram("type69", "➡️ to telegram")
 let arr = [func_analytic, func_message, func_sound, func_timer, shapeModule, func_backColor, func_telegram]
 
 document.body.addEventListener("contextmenu", event => {
+    writeCoordinate(event) // for telegram
     menu.open(event)
 })
 

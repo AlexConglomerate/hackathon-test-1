@@ -37,21 +37,25 @@ export class Teleram extends Module {
         <input type="text" id="val" value="">
         <br>
         <br>
-        <button id = "btn" >Send</button>`
+        <button id = "btn" class="btn" >Send</button>`
+
 
         let a = document.createElement('t')
+        let coordinate = localStorage.getItem('xy')
+        coordinate = JSON.parse(coordinate)
+
         a.innerHTML = html
-        a.style.position = "absolute"
-        a.style.left = "40%"
-        a.style.top = "40%"
+        a.style.position = 'absolute'
+        a.style.top = coordinate.y
+        a.style.left = coordinate.x
         document.body.append(a)
 
-        document.querySelector('#btn').addEventListener('click', (event) => {
-            let text = document.querySelector('#val').value
 
-            let arr = document.querySelectorAll('t')
-            arr = [...arr]
-            arr.forEach(i => i.remove())
+        document.querySelector('.btn').addEventListener('click', (event) => {
+
+            let a = event.path[1]
+            let text = a.querySelector('#val').value
+            a.remove()
 
             let chatId = -1001595369375
             this.simpleMessage(chatId, text)

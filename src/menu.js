@@ -21,6 +21,11 @@ export class ContextMenu extends Menu {
 
     // add function in context menu. Get instanceof Module
     add(func) {
+        if (func == 0) {
+            this.el.innerHTML = ''
+            return
+        }
+
         let a = document.createElement('li', {is: 'expanding-list'})
         a.className = "menu-item"
         a.setAttribute('data-type', func.type)

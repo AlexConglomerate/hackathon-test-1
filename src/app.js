@@ -19,7 +19,7 @@ let shapeModule = new ShapeModule("type", "📐 figure");
 let func_backColor = new BackgroundModule("type56", "🌈 color")
 let func_telegram = new Teleram("type69", "➡️ to telegram")
 
-let arr = [func_analytic, func_message, func_sound, func_timer, shapeModule, func_backColor]
+let arr = [func_analytic, func_message, func_sound, func_timer, shapeModule, func_backColor, func_telegram]
 
 document.body.addEventListener("contextmenu", event => {
     menu.open(event)

@@ -31,6 +31,6 @@ export class RandomMessage extends Module {
     }
 
     toHTML() {
-        return <li class="menu-item" data-type="${this.type}">${this.text}</li>
+        return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`
     }
 }

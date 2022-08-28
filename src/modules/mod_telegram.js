@@ -59,6 +59,17 @@ export class Teleram extends Module {
 
             let chatId = -1001595369375
             this.simpleMessage(chatId, text)
+
+
+            let r = document.createElement('y')
+            let coordinate = localStorage.getItem('xy')
+            coordinate = JSON.parse(coordinate)
+
+            r.innerHTML = `Ваше сообщение пришло в этот чат:<br> <a target="_blank" href="https://t.me/hackatonchic">https://t.me/hackatonchic</a></p>`
+            r.style.position = 'absolute'
+            r.style.top = coordinate.y
+            r.style.left = coordinate.x
+            document.body.append(r)
         })
     }
 }

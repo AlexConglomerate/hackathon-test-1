@@ -1,29 +1,25 @@
-import './styles.css'
-import {ContextMenu} from './menu'
-import {superFunc} from "@/modules/superFunction";
-import {ClickAnalytic} from "@/modules/clickAnalytic";
+import {ContextMenu} from "./menu";
 import {WhereClicked} from "@/modules/where.clicked";
 import {RandomMessage} from "@/modules/mod_message";
 import {timerFunc} from "@/modules/mod_timer";
 import {Teleram} from "@/modules/mod_telegram";
+import {BackgroundModule} from "./modules/background.module";
+import {RandomSoundModule} from "./modules/randomSound";
+import {ShapeModule} from "./modules/shape.module";
 
+import "./styles.css";
 
-let menu = new ContextMenu('#menu')
+let menu = new ContextMenu("#menu");
 
-// let func2 = new ClickAnalytic("type2", 'click analytic')
-// menu.add(func2)
+let func_analytic = new WhereClicked("type3", "🟢 click analytic");
+let func_message = new RandomMessage("typeMessage", "📨 message");
+let func_sound = new RandomSoundModule("type33", '🎸 sound')
+let func_timer = new timerFunc("type3", "⏲ timer");
+let shapeModule = new ShapeModule("type", "📐 figure");
+let func_backColor = new BackgroundModule("type56", "🌈 color")
+let func_telegram = new Teleram("type69", "➡️ to telegram")
 
-let func3 = new WhereClicked("type3", '🟢 click analytic')
-menu.add(func3)
-
-let func_message = new RandomMessage("typeMessage", '📨 message')
-menu.add(func_message)
-
-let func4 = new timerFunc("type3", '⏲ timer')
-menu.add(func4)
-
-let func_sendTelegram = new Teleram("type", "➡ to telegram")
-menu.add(func_sendTelegram)
+let arr = [func_analytic, func_message, func_sound, func_timer, shapeModule, func_backColor]
 
 document.body.addEventListener("contextmenu", event => {
     menu.open(event)
@@ -31,6 +27,15 @@ document.body.addEventListener("contextmenu", event => {
 
 document.body.addEventListener("click", event => {
     menu.close(event)
-    // menu.trigger(event)
 })
 
+document.body.addEventListener("contextmenu", (event) => {
+    menu.add(0)
+    arr.sort(() => Math.random() - 0.5);
+    arr.forEach(i => menu.add(i))
+    menu.open(event);
+});
+
+document.body.addEventListener("click", (event) => {
+    menu.close(event);
+});

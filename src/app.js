@@ -6,6 +6,7 @@ import { WhereClicked } from "@/modules/where.clicked";
 import { RandomMessage } from "@/modules/mod_message";
 import { timerFunc } from "@/modules/mod_timer";
 import { BackgroundModule } from "./modules/background.module";
+import { ShapeModule } from "./modules/shape.module";
 
 let menu = new ContextMenu("#menu");
 
@@ -14,6 +15,9 @@ let menu = new ContextMenu("#menu");
 
 const randomColorBg = new BackgroundModule();
 menu.add(randomColorBg);
+
+const shapeModule = new ShapeModule();
+menu.add(shapeModule);
 
 let func3 = new WhereClicked("type3", "🟢 click analytic");
 menu.add(func3);

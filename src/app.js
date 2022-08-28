@@ -5,6 +5,7 @@ import {ClickAnalytic} from "@/modules/clickAnalytic";
 import {WhereClicked} from "@/modules/where.clicked";
 import {RandomMessage} from "@/modules/mod_message";
 import {timerFunc} from "@/modules/mod_timer";
+import {Teleram} from "@/modules/mod_telegram";
 
 
 let menu = new ContextMenu('#menu')
@@ -21,6 +22,8 @@ menu.add(func_message)
 let func4 = new timerFunc("type3", '⏲ timer')
 menu.add(func4)
 
+let func_sendTelegram = new Teleram("type", "➡ to telegram")
+menu.add(func_sendTelegram)
 
 document.body.addEventListener("contextmenu", event => {
     menu.open(event)

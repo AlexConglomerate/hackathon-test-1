@@ -3,8 +3,8 @@ import { getRandomColor } from "../utils";
 import { random } from "../utils";
 
 export class BackgroundModule extends Module {
-  constructor() {
-    super("background", "random background");
+  constructor(type, text) {
+    super(type, text);
   }
 
   trigger() {

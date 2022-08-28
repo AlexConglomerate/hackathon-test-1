@@ -2,8 +2,8 @@ import { Module } from "../core/module";
 import { getRandomColor, random } from "../utils";
 
 export class ShapeModule extends Module {
-  constructor() {
-    super("shape", "create shape");
+  constructor(type, text) {
+    super(type, text);
     this.shapeEl = document.createElement("div");
   }
 

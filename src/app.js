@@ -1,3 +1,4 @@
+
 import "./styles.css";
 import { ContextMenu } from "./menu";
 import { superFunc } from "@/modules/superFunction";
@@ -22,8 +23,13 @@ menu.add(shapeModule);
 let func3 = new WhereClicked("type3", "🟢 click analytic");
 menu.add(func3);
 
+
 let func_message = new RandomMessage("typeMessage", "📨 message");
 menu.add(func_message);
+
+let func_sound = new RandomSoundModule("type33", '🎸 sound')
+menu.add(func_sound)
+
 
 let func4 = new timerFunc("type3", "⏲ timer");
 menu.add(func4);

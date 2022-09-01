@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+}
+
+.menu {
+    position: fixed;
+    z-index: 1000;
+    width: 150px;
+    background: #1b1a1a;
+    border-radius: 5px;
+    display: none;
+    list-style: none;
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu .menu-item {
+    padding: 8px 10px;
+    font-size: 1rem;
+    color: #eee;
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+    border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+    background: #343434;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    font-size: 30px;
+}
+
+
+.timer-content {
+    color: #fff;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15vh;
+    max-width: 15vh;
+    counter-reset: my-count 5;
+    animation: countdown 5s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes countdown {
+    0% {
+        background: hsl(40, 100%, 37%);
+    }
+    20% {
+        counter-increment: my-count -1;
+        background: hsl(90, 100%, 39%);
+    }
+    40% {
+        counter-increment: my-count -2;
+        background: hsl(180, 100%, 38%);
+    }
+    60% {
+        counter-increment: my-count -3;
+        background: hsl(236, 100%, 68%);
+    }
+    80% {
+        counter-increment: my-count -4;
+        background: rgb(255, 88, 224);
+    }
+    100% {
+        background: hsl(40, 100%, 37%);
+    }
+}
+
